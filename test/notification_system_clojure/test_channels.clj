@@ -9,14 +9,14 @@
 (deftest test-sms
   (testing "SMS channel"
     (let [msg (->Message "1" "Movies" "Hello SMS" (java.util.Date.))]
-      (is (true? (sms/send (first users) msg))))))
+      (is (true? (sms/send-sms (first users) msg))))))
 
 (deftest test-email
   (testing "Email channel"
     (let [msg (->Message "2" "Finance" "Hello Email" (java.util.Date.))]
-      (is (true? (email/send (first users) msg))))))
+      (is (true? (email/send-email (first users) msg))))))
 
 (deftest test-push
   (testing "Push channel"
     (let [msg (->Message "3" "Sports" "Hello Push" (java.util.Date.))]
-      (is (true? (push/send (first users) msg))))))
+      (is (true? (push/send-push (first users) msg))))))
