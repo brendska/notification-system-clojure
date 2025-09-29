@@ -1,1 +1,1 @@
-["^ ","~$-main",["^ ","~:row",4,"~:col",1,"~:varargs-min-arity",0,"~:name","^0","~:ns","~$notification-system-clojure.core","~:top-ns","^6","~:type","~:fn"],"~:filename","/Users/brendaazeredo/Desktop/notification-system-clojure/src/notification_system_clojure/core.clj"]
+["^ ","~$-main",["^ ","~:row",3,"~:col",1,"~:fixed-arities",["~#set",[0]],"~:name","^0","~:ns","~$notification-system-clojure.core","~:top-ns","^7","~:type","~:fn"],"~:filename","/Users/brendaazeredo/Desktop/notification-system-clojure/src/notification_system_clojure/core.clj"]
