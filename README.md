@@ -1,44 +1,124 @@
-# notification-system-clojure
+# Notification System - Clojure
 
-FIXME: description
+This project is a **Notification System** built in Clojure. It receives messages with categories (Sports, Finance, Movies) and forwards them to pre-defined users based on their subscriptions and preferred channels (SMS, Email, Push Notification).  
 
-## Installation
+---
 
-Download from http://example.com/FIXME.
+## Features
 
-## Usage
+- Users can subscribe to message categories:
+  - Sports
+  - Finance
+  - Movies
+- Users specify preferred channels:
+  - SMS
+  - Email
+  - Push Notification
+- Message routing selects the correct channels for each user
+- Logging of notification attempts
+- 'Mocked' users and messages for simplicity
+- Unit tests for all services, channels, and controllers
 
-FIXME: explanation
+---
 
-    $ java -jar notification-system-clojure-0.1.0-standalone.jar [args]
+## How It Works
 
-## Options
+1. **User Subscriptions**  
+   Each user is pre-populated with:
+   - ID, Name, Email, Phone Number
+   - Subscribed categories
+   - Preferred channels
 
-FIXME: listing of options this app accepts.
+2. **Message Submission**  
+   - Users submit a message via a simple form:
+     - Category (dropdown)
+     - Message body (text area)
+   - Validation ensures fields are not empty
 
-## Examples
+3. **Notification Delivery**  
+   - The system sends the message only to users subscribed to that category
+   - The message is sent through the user's selected channels
+   - Each channel has its own class to manage sending logic
+   - Logs store the message, user, channel, timestamp, and status
 
-...
+---
 
-### Bugs
+## Running the Project
 
-...
+### Prerequisites
+- [Clojure](https://clojure.org/guides/getting_started)
+- [Leiningen](https://leiningen.org/)
 
-### Any Other Sections
-### That You Think
-### Might be Useful
+### Steps
 
-## License
+1. Clone the repository
+```bash
+git clone git@github.com:brendska/notification-system-clojure.git
+cd notification-system-clojure
+Install dependencies
 
-Copyright © 2025 FIXME
+bash
+Copy code
+lein deps
+Run the application (REPL or server)
 
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
+bash
+Copy code
+lein repl
+Execute tests
 
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+bash
+Copy code
+lein test
+Unit Testing
+All services, channels, and controllers are covered
+
+Example test commands:
+
+bash
+Copy code
+lein test notification-system-clojure.test-channels
+lein test notification-system-clojure.test-controller
+lein test notification-system-clojure.test-service
+Tests use mock users and messages
+
+100% of tests should pass if setup correctly
+
+Architecture & Principles
+OOP & SOLID:
+
+Separation of concerns: Controllers, Services, Channels, Models
+
+Abstraction and interfaces for notification channels
+
+Dependency inversion: Controller depends on service, not on channels directly
+
+Design Patterns:
+
+Strategy pattern for selecting notification channel
+
+Factory or simple dispatch for channel logic
+
+Scalability:
+
+Easy to add new notification channels
+
+Easy to add new message categories
+
+Minimal changes needed for new requirements
+
+Error Handling:
+
+Validation for required fields
+
+Logging of delivery attempts and failures
+
+Notes
+No real messages are sent; channels print to console for demonstration
+
+Users are mocked inside the code (src/notification_system_clojure/models/user.clj)
+
+The system is ready to integrate with actual SMS/Email/Push providers in the future
+
+Author
+Brenda Azeredo
