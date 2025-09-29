@@ -1,9 +1,14 @@
 (ns notification-system-clojure.utils.logger)
 
-(def logs (atom []))
+(def log (atom []))
 
-(defn log [entry]
-  (swap! logs conj entry))
+(defn log-notification [user message channel success?]
+  (swap! log conj {:user (:name user)
+                   :category (:category message)
+                   :channel channel
+                   :message (:body message)
+                   :timestamp (java.util.Date.)
+                   :success success?}))
 
 (defn get-logs []
-  (reverse @logs))
+  @log)
