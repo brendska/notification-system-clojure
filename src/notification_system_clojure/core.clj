@@ -1,7 +1,4 @@
-(ns notification-system-clojure.core
-  (:gen-class))
+(ns notification-system-clojure.core)
 
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println "Hello, World!"))
+(defn -main []
+  (println "Notification System started"))
