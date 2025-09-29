@@ -2,6 +2,8 @@
 
 This project is a **Notification System** built in Clojure. It receives messages with categories (Sports, Finance, Movies) and forwards them to pre-defined users based on their subscriptions and preferred channels (SMS, Email, Push Notification).  
 
+The system demonstrates best practices, SOLID principles, design patterns, clean architecture, and unit testing.
+
 ---
 
 ## Features
@@ -16,7 +18,7 @@ This project is a **Notification System** built in Clojure. It receives messages
   - Push Notification
 - Message routing selects the correct channels for each user
 - Logging of notification attempts
-- 'Mocked' users and messages for simplicity
+- Mocked users and messages for simplicity
 - Unit tests for all services, channels, and controllers
 
 ---
@@ -120,5 +122,5 @@ Users are mocked inside the code (src/notification_system_clojure/models/user.cl
 
 The system is ready to integrate with actual SMS/Email/Push providers in the future
 
-Author
-Brenda Azeredo
+
+Author: Brenda Azeredo
