@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <body>
+    <h2>Send Notification</h2>
+    <form id="messageForm">
+      <label>Category:</label>
+      <select name="category">
+        <option value="Sports">Sports</option>
+        <option value="Finance">Finance</option>
+        <option value="Movies">Movies</option>
+      </select>
+      <br />
+      <label>Message:</label>
+      <textarea name="body"></textarea>
+      <br />
+      <button type="submit">Send</button>
+    </form>
+    <div id="logHistory"></div>
+    <script>
+      const form = document.getElementById("messageForm");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const res = await fetch("/send", { method: "POST", body: data });
+        console.log(await res.json());
+      });
+    </script>
+  </body>
+</html>
